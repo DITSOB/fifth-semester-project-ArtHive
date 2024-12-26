@@ -2,7 +2,7 @@
 @section('content')
 
 <div id="">
-    <h1>This is welcome</h1>
+    <h1>This is welcome page</h1>
 </div>
 
 @endsection

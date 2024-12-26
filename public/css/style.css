@@ -12,6 +12,8 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 
+/* footer */
+
 .container{
     max-width: 1170px;
     margin: auto;
@@ -50,7 +52,7 @@ ul{
     position: absolute;
     left: 0;
     bottom: -10px;
-    background-color: #e91e63;
+    background-color: navy;
     height: 2px;
     box-sizing: border-box;
     width: 50px;
@@ -71,7 +73,7 @@ ul{
 }
 
 .footer-col ul li a:hover{
-    color: #e91e63;
+    color: navy;
     padding-left: 4px;
 }
 
@@ -90,7 +92,7 @@ ul{
 
 .footer-col .social-links a:hover{
     color: white;
-    background-color: #e91e63;
+    background-color: navy;
 }
 
 /* responsive footer */
@@ -106,4 +108,16 @@ ul{
         width: 100%;
         margin-bottom: 20px;
     }
+}
+
+/* navbar */
+
+
+/* login form */
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
 }
