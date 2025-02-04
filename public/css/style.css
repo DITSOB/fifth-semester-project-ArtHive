@@ -1,36 +1,139 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 *{
+    /* fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-size: 18px;
+    font-style: normal;
+      
+
+    /* initializing variables */
+
+    --primary-color : #ffffff;
+    --button-color : #201e1e;
+    --border-color: #74c914;
+    --hover-color: #1B03A3;
+
+    /* default margin and padding */
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-
 }
 
 body{
     line-height: 1.5;
-    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+/* navbar */
+
+nav{
+    background-color: var(--primary-color);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav ul li a{
+    height: 50px;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--button-color);
+}
+
+nav ul li a:hover{
+    color: var(--hover-color);
+}
+
+nav ul li:first-child{
+    margin-right: auto;
+}
+
+#login{
+    border: 1px solid #0f0f0f;
+    border-radius: 12px;
+    height: 40px;
+    margin-right: 5px;
+}
+
+#login:hover{
+    background-color: black;
+    color: white;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 200px;
+    z-index: 999;
+    background-color:rgba(236, 233, 233, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.menu-button{
+    display: none;
+}
+
+.sidebar li{
+    width: 100%;
+}
+
+.sidebar a{
+    width: 100%;
+}
+
+@media(max-width: 800px){
+    .hideOnMobile{
+        display: none;
+    }
+
+    .menu-button{
+        display: block;
+    }
+}
+
+@media(max-width: 400px){
+    .sidebar{
+        width: 100%;
+    }
 }
 
 /* footer */
-
-.container{
-    max-width: 1170px;
-    margin: auto;
-}
 
 .row{
     display: flex;
     flex-wrap: wrap;
 }
 
-ul{
-    list-style: none;
-}
-
 .footer{
     background-color: white;
-    padding: 70px 0;
+    padding: 30px 0;
 }
 
 .footer-col{
@@ -110,14 +213,97 @@ ul{
     }
 }
 
-/* navbar */
+.horiz-line{
+    height: 1px;
+    width: 100vhs;
+    background-color: black;
 
+}
 
-/* login form */
-.divider:after,
-.divider:before {
-content: "";
-flex: 1;
-height: 1px;
-background: #eee;
+/* card */
+
+.card-container{
+    display: inline-flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.card{
+    width: 325px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+}
+
+.card img{
+    width: 100%;
+    height: 400px;
+}
+
+.card-content{
+    padding: 16px;
+}
+
+.card-content h3{
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.card-content p{
+    color: #666;
+    font-size: 15px;
+    line-height: 1.3;
+}
+
+.card-content .btn{
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #4f84c4;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 16px;
+}
+
+/* searchbar */
+
+.box-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box{
+    max-width: 400px;
+    width: 100%;
+}
+
+.box .search-box{
+    position: relative;
+    height: 30px;
+    width: 380px;
+    margin: auto;
+    border-radius: 25px;
+}
+
+.search-box input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    border: 1px solid black;
+    padding-left: 20px;
+}
+
+.search-box .icon{
+    position: absolute;
+    right: -2px;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 0 25px 25px 0;
 }
