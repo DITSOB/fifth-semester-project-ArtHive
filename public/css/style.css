@@ -309,3 +309,69 @@ nav ul li:first-child{
 }
 
 /* slider */
+.slide-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider{
+    width: 1300px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.slides{
+    width: 500%;
+    height: 500px;
+    display: flex;
+}
+
+.slides input{
+    display: none;
+}
+
+.slide{
+    width: 20%;
+    transition: 2s;
+}
+
+.slide img{
+    object-fit: cover;
+    width: 1300px;
+    height: 500px;
+}
+
+/* manual slide navigation */
+.navigation-manual{
+    position: absolute;
+    width: 1300px;
+    margin-top: -50px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn{
+    border: 2px solid #bbbbbb;
+    padding: 5px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+    margin-right: 10px;
+}
+
+.manual-btn:hover{
+    background: #bbbbbb;
+}
+
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+    margin-left: -20%;
+}
