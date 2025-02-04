@@ -1,9 +1,6 @@
 @extends('Layout.master')
 @section('content')
 
-@extends('Layout.master')
-@section('content')
-
     @foreach($products as $product)
 
         <div class="card-container">
@@ -25,7 +22,5 @@
 
 
     @endforeach
-
-@endsection
 
 @endsection

@@ -3,7 +3,8 @@
 
 <div class="container-fluid ps-md-0">
   <div class="row g-0">
-    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image">
+    </div>
     <div class="col-md-8 col-lg-6">
       <div class="login d-flex align-items-center py-5">
         <div class="container">
@@ -32,7 +33,8 @@
                 <div class="d-grid">
                   <button class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" type="submit">Sign in</button>
                   <div class="text-center">
-                    <a class="small" href="#">Forgot password?</a>
+                    <a class="small" href="#">Forgot password?</a><br>
+                    Don't have an account? <a class="small" href="">Sign up!</a>
                   </div>
                 </div>
 
