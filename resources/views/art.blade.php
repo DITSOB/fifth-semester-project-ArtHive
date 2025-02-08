@@ -11,6 +11,7 @@
                     <p>{{ $product->description}}</p>
                     @if($product->sale_price!=NULL)
                         <h4 style="text-decoration: line-through; color:cadetblue;">${{$product->price}}</h4>
+                        <h4 style="text-decoration: line-through; color:cadetblue;">${{$products->price}}</h4>
                         <h3>${{$product->sale_price}}</h3>
                     @else
                         <h3>${{$product->price}}</h3>
