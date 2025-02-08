@@ -75,7 +75,8 @@
 
         <div class="checkout-container">
        
-            <form action="{{ route('check_out') }}" method="GET">
+            <form action="{{ route('checkout') }}" method="GET">
+
                 <input type="submit" class="btn checkout-btn" value="Checkout">
             </form>
           
