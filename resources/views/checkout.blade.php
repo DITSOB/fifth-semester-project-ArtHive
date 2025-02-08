@@ -1,37 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>WATCH - Store</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="Product Landing Page" name="keywords">
-        <meta content="Product Landing Page" name="description">
-
-        <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
-
-        <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400|Quicksand:500,600,700&display=swap" rel="stylesheet">
-
-        <!-- CSS Libraries -->
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-    </head>
-
-    <body>
-        
-    @include('layouts.navbar');
-
-
-    <!-- Checkout Start -->
-    <div class="container-fluid pt-5">
-        <div class="container">
-        
-       
+@extends('Layout.master')
+@section('content')     
     <!-- Checkout -->
     <section class="my-2 py-3 checkout">
         <div class="container text-center mt-1 pt-5">
@@ -40,7 +8,7 @@
         </div>
 
         <div class="mx-auto container">
-            <form id="checkout-form" action="{{ route('place_order') }}" method="POST">
+            <form id="checkout-form" action="#" method="POST">
              @csrf
                 <div class="form-group checkout-small-element">
                     <label for="">Name</label>
@@ -92,5 +60,4 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
-    </body>
-</html>
+@endsection

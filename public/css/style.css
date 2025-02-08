@@ -62,6 +62,7 @@ nav ul li a{
 
 nav ul li a:hover{
     color: var(--hover-color);
+    text-decoration: none;
 }
 
 nav ul li:first-child{
