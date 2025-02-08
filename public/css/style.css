@@ -375,3 +375,30 @@ nav ul li:first-child{
 #radio2:checked ~ .first{
     margin-left: -20%;
 }
+
+.navigation-auto{
+    position: absolute;
+    display: flex;
+    width: 1300px;
+    justify-content: center;
+    margin-top: 450px;
+}
+
+.navigation-auto div{
+    border: 2px solid #bbbbbb;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.navigation-auto div:not(:last-child){
+    margin-right: 10px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background: #bbbbbb;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background: #bbbbbb;
+}
