@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use App\Models\User;
 
 class HomeController extends Controller
@@ -16,12 +17,18 @@ class HomeController extends Controller
         return view('login');
     }
 
+    public function logout(){
+        Session::flush();
+        return redirect('/');
+    }
+
     public function gallery(){
         return view('galleries');
     }
 
     public function art(){
         $products = Product::all();
+        // dd($products);
         return view('art', compact('products'));
     }
 
@@ -36,7 +43,7 @@ class HomeController extends Controller
 
     public function cart(Request $request){
         if($request->session()->has('cart')){
-            dd($request->session()->get('cart'));
+            // dd($request->session()->get('cart'));
             return view('cart');
         }
     }

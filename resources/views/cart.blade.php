@@ -9,7 +9,6 @@
          <div class="row">
              <div class="col-lg-10 offset-lg-1">
                  <div class="cart_container">
-                 
                      <div class="cart_title">Shopping Cart
                         @if(Session::has('cart_size'))
                         <small> ({{ Session::get('cart_size') }} item in your cart) </small>

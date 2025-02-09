@@ -20,13 +20,14 @@
                 </div>
                 </div>
             </div>
-            <li class="hideOnMobile {{ Route::currentRouteName()=='index'?'menu-active':''}}"><a href="{{ route('index'); }}">Home</a></li>
-            <li class="hideOnMobile {{ Route::currentRouteName()=='art'?'menu-active':''}}"><a href="{{ route('art'); }}">Arts</a></li>
-            <li class="hideOnMobile {{ Route::currentRouteName()=='auction'?'menu-active':''}}"><a href="{{ route('auction'); }}">Auction</a></li>
-            <li class="hideOnMobile {{ Route::currentRouteName()=='gallery'?'menu-active':''}}"><a href="{{ route('gallery'); }}">Galleries</a></li>
-            <li class="hideOnMobile {{ Route::currentRouteName()=='about'?'menu-active':''}}"><a href="{{ route('about'); }}">About</a></li>
-            <li class="hideOnMobile {{ Route::currentRouteName()=='cart'?'menu-active':''}}"><a href="{{ route('cart'); }}">Cart&nbsp;<i class="bi bi-cart"></i></a></li>
-            <li class="hideOnMobile"><a href="{{ route('login'); }}" id="login">Login<i class="bi bi-box-arrow-in-right"></i></a></li>
+            <li class="hideOnMobile"><a href="{{ route('index'); }}">Home</a></li>
+            <li class="hideOnMobile"><a href="{{ route('art'); }}">Arts</a></li>
+            <li class="hideOnMobile"><a href="{{ route('auction'); }}">Auction</a></li>
+            <li class="hideOnMobile"><a href="{{ route('gallery'); }}">Galleries</a></li>
+            <li class="hideOnMobile"><a href="{{ route('about'); }}">About</a></li>
+            <li class="hideOnMobile"><a href="{{ route('cart'); }}">Cart&nbsp;<i class="bi bi-cart"></i></a></li>
+            <li class="hideOnMobile"><a href="{{ route('login'); }}" id="login">Login<i class="bi bi-person-fill"></i></a></li>
+            <li class="hideOnMobile"><a href="{{ route('logout'); }}" id="login">Logout<i class="bi bi-box-arrow-in-right"></i></a></li>
             <li class="menu-button" onclick=showSidebar()><a href="#"><i class="bi bi-list"></i></a></li>
         </ul>
     </nav>

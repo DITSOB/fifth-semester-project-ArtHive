@@ -3,10 +3,9 @@
 
 <div class="card-body">
     @foreach($errors as $error)
-        <dialog id="popup">
-            <p>{{ $error }}</p>
-            <button onclick="document.getElementById('popup').close();"></button>
-        </dialog>
+        <div>
+            <span>{{ $error }}</span>
+        </div>
     @endforeach
         <div class="card-container">
             @foreach($products as $product)
@@ -19,7 +18,7 @@
                             <span>View Details</span>
                         </li>
                         <li>
-                            <form id="form" action="{{ route('add_to_cart', $product->id); }}" method="POST">
+                            <form id="form" action="{{ route('add_to_cart'); }}" method="POST">
                                 @csrf
                                 <input type="hidden" name="id" value="{{ $product->id}}">
                                 <input type="hidden" name="name" value="{{ $product->name}}">
