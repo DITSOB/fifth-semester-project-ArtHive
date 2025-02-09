@@ -518,3 +518,15 @@ nav ul li:first-child{
 #radio2:checked ~ .navigation-auto .auto-btn2{
     background: #bbbbbb;
 }
+
+.btn{
+    background: grey;
+    border-radius: 15px;
+    color: #fff;
+}
+
+
+.btn:hover{
+    color: #fff !important;
+    background: #333 !important;
+}

@@ -25,6 +25,7 @@
                                 <input type="hidden" name="name" value="{{ $product->name}}">
                                 <input type="hidden" name="price" value="{{ $product->price}}">
                                 <input type="hidden" name="sale_price" value="{{ $product->sale_price}}">
+                                <input type="hidden" name="type" value="{{ $product->type}}">
                                 <input type="hidden" name="image" value="{{ $product->image}}">
                                 <input type="hidden" name="quantity" value="1">
                                 <a onclick="document.getElementById('form').submit();"><i class="bi bi-cart-fill"></i></a>

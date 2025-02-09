@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-5">
                 <div class="main-img">
-                    <img class="img-fluid" src="{{ asset('img/', $product->image); }}" alt="{{ $product->image }}">
+                    <img class="img-fluid" src="{{ asset('img/' . $product->image); }}" alt="{{ $product->image }}">
                     <!-- <div class="row my-3 previews">
                         <div class="col-md-3">
                             <img class="w-100" src="https://cdn.pixabay.com/photo/2015/07/24/18/40/model-858754_960_720.jpg" alt="Sale">
@@ -44,11 +44,11 @@
 
 
                     <div class="buttons d-flex my-5" style="justify-content: space-between;">
-                        <div class="block" style="background-color: navy;">
-                            <a href="#" class="shadow btn custom-btn ">Add to Wishlist</a>
+                        <div class="block">
+                            <a href="#" class="btn custom-btn"><i class="bi bi-heart-fill"></i>&nbsp;Add to Wishlist</a>
                         </div>
-                        <div class="block" style="background-color: navy;">
-                            <button class="shadow btn custom-btn">Add to cart</button>
+                        <div class="block">
+                            <button class="shadow btn custom-btn"><i class="bi bi-cart-fill"></i>&nbsp;Add to cart</button>
                         </div>
                     </div>
 
@@ -59,12 +59,12 @@
 
                 <div class="product-details my-4">
                     <p class="details-title text-color mb-1">Product Details</p>
-                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat excepturi odio recusandae aliquid ad impedit autem commodi earum voluptatem laboriosam? </p>
+                    <p class="description">{{ $product->description }}</p>
                 </div>
               
                          <div class="row questions bg-light p-3">
                     <div class="col-md-1 icon">
-                        <i class="fa-brands fa-rocketchat questions-icon"></i>
+                        <i class="bi bi-question" style="font-size: 30px;"></i>
                     </div>
                     <div class="col-md-11 text">
                         Have a question about our products at E-Store? Feel free to contact our representatives via live chat or email.
@@ -72,7 +72,7 @@
                 </div>
 
                 <div class="delivery my-4">
-                    <p class="font-weight-bold mb-0"><span><i class="fa-solid fa-truck"></i></span> <b>Delivery done in 3 days from date of purchase</b> </p>
+                    <p class="font-weight-bold mb-0"><span><i class="bi bi-truck"></i></span> <b>Delivery done in 3 days from date of purchase</b> </p>
                     <p class="text-secondary">Order now to get this product delivery</p>
                 </div>             
             </div>

@@ -36,6 +36,7 @@ class HomeController extends Controller
 
     public function cart(Request $request){
         if($request->session()->has('cart')){
+            dd($request->session()->get('cart'));
             return view('cart');
         }
     }
@@ -54,6 +55,7 @@ class HomeController extends Controller
             $name=$request->name;
             $image=$request->image;
             $quantity=$request->quantity;
+            $type=$request->type;
             ($request->sale_price !=null) ? $price=$request->sale_price : $price=$request->price;
 
             $product_array = array(
@@ -61,13 +63,15 @@ class HomeController extends Controller
                 'name'=>$name,
                 'image'=>$image,
                 'quantity'=>$quantity,
-                'price'=>$price
+                'price'=>$price,
+                'type'=>$type
             );
             $cart[$request->id]=$product_array;
 
             $request->session()->put('cart',$cart);
             $cart_items = session()->get('cart');
             $this->calculateTotal($request);
+            $this->calculateSizeofCart($request);
             return view('cart');
         
             }
@@ -85,6 +89,7 @@ class HomeController extends Controller
             $id=$request->id;
             $name=$request->name;
             $image=$request->image;
+            $type=$request->type;
             $quantity=$request->quantity;
             ($request->sale_price !=null) ? $price=$request->sale_price : $price=$request->price;
 
@@ -93,19 +98,28 @@ class HomeController extends Controller
             'name'=>$name,
             'image'=>$image,
             'quantity'=>$quantity,
-            'price'=>$price
+            'price'=>$price,
+            'type'=>$type
             );
             $cart[$request->id]=$product_array;
 
             $request->session()->put('cart',$cart);
             $this->calculateTotal($request);
+            $this->calculateSizeofCart($request);
             return view('cart');
         }
     }
 
     public function checkout(){
         return view('checkout');
-     }
+    }
+
+    public function calculateSizeofCart($request){
+        $cart = $request->session()->get('cart');
+        $size = sizeof($cart);
+        $request->session()->put('cart_size', $size);
+    }
+
 
     public function calculateTotal($request){
         $cart = $request->session()->get('cart');
