@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Gallery;
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -13,7 +14,8 @@ class HomeController extends Controller
     }
 
     public function gallery(){
-        return view('galleries');
+        $galleries = Gallery::all();
+        return view('galleries', compact('galleries'));
     }
 
     public function art(){

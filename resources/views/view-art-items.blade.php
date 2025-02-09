@@ -8,7 +8,6 @@
         <div class="container">
         <section class="cart container mt-2 my-3 py-5">
         <div class="container mt-2" style="padding: 0;">
-        <h4>Your Cart</h4>
         @if($errors)
             @foreach($errors->all() as $error)
                 <h2 style="justify-content: center; align-items: center; ">{{ $error }}</h2>
@@ -43,9 +42,13 @@
                         <td>
                             <span class="product-price" style="display: flex; justify-content: flex-start;">{{ $product->price }}</span>
                         </td>
-                        <td style="display: flex; justify-content: center;">
-                            <button class="btn-log btn-lg btn-success" style="width: 50px; height: 50px; display: flex; justify-content: center;"><i class="bi bi-pencil-square"></i></button>
-                            <button class="btn-log btn-lg btn-danger" style="width: 50px; height: 50px; display: flex; justify-content: center;"><i class="bi bi-trash"></i></button>
+                        <td style="display: flex; justify-content: center; padding-top: 30px; gap: 5px;">
+                            <form action="{{ route('edit', $product->id) }}">
+                                <button class="btn-log btn-lg btn-success" style="width: 50px; height: 50px; display: flex; justify-content: center;"><i class="bi bi-pencil-square"></i></button>
+                            </form>
+                            <form action="{{ route('delete', $product->id) }}">
+                                <button class="btn-log btn-lg btn-danger" style="width: 50px; height: 50px; display: flex; justify-content: center;"><i class="bi bi-trash"></i></button>
+                            </form>
                         </td>
                         </tr>
                 @endforeach

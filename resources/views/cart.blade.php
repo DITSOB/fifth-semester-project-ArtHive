@@ -21,8 +21,6 @@
                 <th>Quantity</th>
                 <th>Subtotal</th>
             </tr>
-
-
             @if(Session::has('cart'))
                 @foreach(Session::get('cart') as $product)
                         <tr>
@@ -43,10 +41,7 @@
                         </td>
 
                         <td>
-                            <form action="{{ route('change_quantity');  }}" method="POST">
-                                <p  style="padding-left: 20px;">{{ $product['quantity'] }}</p>
-                                <input type="hidden" name="id" value="{{ $product['id'] }}">
-                            </form>
+                            <p  style="padding-left: 20px;">{{ $product['quantity'] }}</p>
                         </td>
 
                         <td>
@@ -64,8 +59,10 @@
       
                 <tr>
                     <td>Total</td>
-                    @if(Session::has('totalPrice'))
-                    <td>RS {{Session::get('totalPrice')}}</td>
+                    @if(Session::has('totalPrice') && Session::get('cart')!=NULL)
+                        <td>RS {{Session::get('totalPrice')}}</td>
+                    @else
+                        <td>RS 0</td>
                     @endif
 
                 </tr>

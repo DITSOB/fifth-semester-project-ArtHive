@@ -47,12 +47,23 @@
 
 
                     <div class="buttons d-flex my-5" style="justify-content: space-between;">
-                        <div class="block">
-                            <a href="#" class="btn custom-btn"><i class="bi bi-heart-fill"></i>&nbsp;Add to Wishlist</a>
+                    <div class="block">
+                            <button class="shadow btn custom-btn"><i class="bi bi-heart-fill"></i>&nbsp;Add to Wishlist</button>
                         </div>
                         <div class="block">
-                            <button class="shadow btn custom-btn"><i class="bi bi-cart-fill"></i>&nbsp;Add to cart</button>
+                        <form id="form-{{ $product->id }}" action="{{ route('add_to_cart', $product->id) }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="id" value="{{ $product->id }}">
+                            <input type="hidden" name="name" value="{{ $product->name }}">
+                            <input type="hidden" name="price" value="{{ $product->price }}">
+                            <input type="hidden" name="sale_price" value="{{ $product->sale_price }}">
+                            <input type="hidden" name="type" value="{{ $product->type }}">
+                            <input type="hidden" name="image" value="{{ $product->image }}">
+                            <input type="hidden" name="quantity" value="1">
+                            <button type="submit" class="shadow btn custom-btn"><i class="bi bi-cart-fill"></i>&nbsp;Add to cart</button>
+                        </form>
                         </div>
+                        
                     </div>
 
 

@@ -1,6 +1,8 @@
 @extends('Layout.master')
 @section('content')
 
-<h1>This is Acutions</h1>
+<div class="container">
+    <h1>Feature Coming Soon</h1>
+</div>
 
 @endsection

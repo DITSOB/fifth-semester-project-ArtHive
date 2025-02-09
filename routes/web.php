@@ -31,3 +31,9 @@ Route::post('/signup', [LoginController::class, 'register']);
 
 Route::get('/view-art', [AdminController::class, 'showArtItems'])->name('admin-art');
 Route::get('/view-auction', [AdminController::class, 'showAuctionItems'])->name('admin-auction');
+
+Route::get('/delete-product/{id}', [AdminController::class, 'delete'] )->name('delete');
+
+Route::get('/edit-product/{id}', [AdminController::class, 'edit'] )->name('edit');
+
+Route::post('/update-product/{id}', [AdminController::class, 'update'] )->name('update');
