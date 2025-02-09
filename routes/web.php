@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PaymentController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
@@ -37,3 +38,7 @@ Route::get('/delete-product/{id}', [AdminController::class, 'delete'] )->name('d
 Route::get('/edit-product/{id}', [AdminController::class, 'edit'] )->name('edit');
 
 Route::post('/update-product/{id}', [AdminController::class, 'update'] )->name('update');
+
+Route::post('/payment', [PaymentController::class, 'payment'])->name('payment');
+Route::post('/processPayment', [PaymentController::class, 'processPayment'])->name('processPayment');
+Route::post('/confirm-payment/{order_id}/{method}', [PaymentController::class, 'confirmPayment'])->name('confirmPayment');

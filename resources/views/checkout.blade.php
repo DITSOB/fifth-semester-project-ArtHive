@@ -8,16 +8,11 @@
         </div>
 
         <div class="mx-auto container">
-            <form id="checkout-form" action="#" method="POST">
+            <form id="checkout-form" action="{{ route('payment') }}" method="POST">
              @csrf
                 <div class="form-group checkout-small-element">
                     <label for="">Name</label>
                     <input type="text" class="form-control" id="checkout-name" name="name" placeholder="name" required>
-                </div>
-
-                <div class="form-group checkout-small-element">
-                    <label for="">Email</label>
-                    <input type="email" class="form-control" id="checkout-email" name="email" placeholder="email address" required>
                 </div>
 
                 <div class="form-group checkout-small-element">
