@@ -13,13 +13,14 @@
               <h3 class="login-heading mb-4">Welcome back!</h3>
 
               <!-- Sign In Form -->
-              <form>
+              <form action="{{ route('login') }}" method="POST">
+                @csrf
                 <div class="form-floating mb-3">
-                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                  <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
                   <label for="floatingInput">Email address</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                  <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password" required>
                   <label for="floatingPassword">Password</label>
                 </div>
 
@@ -31,10 +32,10 @@
                 </div>
 
                 <div class="d-grid">
-                  <button class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" type="submit">Sign in</button>
+                  <button class="btn-log btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" type="submit">Login</button>
                   <div class="text-center">
                     <a class="small" href="#">Forgot password?</a><br>
-                    Don't have an account? <a class="small" href="">Sign up!</a>
+                    Don't have an account? <a class="small" href="{{ route('signup') }}">Sign up!</a>
                   </div>
                 </div>
 

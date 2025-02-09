@@ -30,6 +30,9 @@
                     <div class="product-title text-bold my-3">
                         {{ $product->name }}
                     </div>
+                    <div class="product-title my-4">
+                        <span style="color: rgb(119, 118, 118)">Artist: {{ $product->artist }}</span>
+                    </div>
 
 
                     <div class="price-area my-4">

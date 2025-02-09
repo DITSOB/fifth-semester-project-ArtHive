@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
@@ -16,5 +17,17 @@ Route::post('/remove_from_cart', [HomeController::class, 'remove_from_cart'])->n
 Route::post('/change_quantity', [HomeController::class, 'change_quantity'])->name('change_quantity');
 Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');
 
-Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::get('/profile', [LoginController::class, 'showProfile'])->name('profile');
+
+Route::get('/dashboard', [LoginController::class, 'showDashboard'])->name('dashboard');
+
+Route::get('/login', [LoginController::class, 'showLogin'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
+
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::get('/signup', [LoginController::class, 'showSignup'])->name('signup');
+Route::post('/signup', [LoginController::class, 'register']);
+
+Route::get('/view-art', [AdminController::class, 'showArtItems'])->name('admin-art');
+Route::get('/view-auction', [AdminController::class, 'showAuctionItems'])->name('admin-auction');
