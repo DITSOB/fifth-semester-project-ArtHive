@@ -25,8 +25,9 @@ class HomeController extends Controller
         return view('art', compact('products'));
     }
 
-    public function single_product(){
-        return view('singleproduct');
+    public function single_product($id){
+        $product = Product::find($id);
+        return view('singleproduct', compact('product'));
     }
 
     public function auction(){
